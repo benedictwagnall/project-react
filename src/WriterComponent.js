@@ -46,9 +46,9 @@ export class WriterComponent extends EPICSComponent{
     render(){
         //A writable input element and button for submission. Sends user input to malcolm
         return(
-            <form onSubmit={this.handleSubmit}>
-                <input type="number" onChange={this.handleChange} ref="textField" />
-                <input type="submit" value="Submit" />
+            <form id='#writerComp' onSubmit={this.handleSubmit}>
+                <input id='writerBox' type="number" onChange={this.handleChange} ref="textField" />
+                <input id='writerButt' type="submit" value="Submit" />
             </form>
         );
     }

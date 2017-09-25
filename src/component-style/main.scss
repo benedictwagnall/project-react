@@ -1,17 +1,22 @@
 #topwrapper{
-    width: 100%;
+    height:200px;
+    background-color: #dddddd;
+    box-sizing: border-box;
+    width: auto;
 }
 
 .displayDiv{ 
+    width:auto;
     background-color:#c4c4c4;
     border: solid #8e8e8e 5px;
     border-radius: 10px;
+    margin: 2px;
 }
 
 #signalADC{
-    float:left;
-    height:175px;
-    width:250px;
+    float: left;
+    height: 175px;
+    width: 250px;
     display: inline;
     text-align: left;
     position: relative;
@@ -42,7 +47,7 @@
 
 
 #temps{
-    float: right;
+    float: left;
     width: 175px;
     height: 175px;
     position: relative;
@@ -61,3 +66,20 @@
 }
 
 
+#LEDWriterComp{
+    float:right;
+    width:auto;
+    height: 175px;
+}
+#LEDInner{
+    float:left;
+    width:auto;
+}
+#writerInner{
+    float:right;
+}
+
+
+#gauge{
+
+}

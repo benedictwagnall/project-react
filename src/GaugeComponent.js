@@ -18,6 +18,8 @@ export class GaugeComponent extends EPICSComponent{
     componentDidMount(){
         this.canvas = this.refs.gaugeRef;
         this.context = this.canvas.getContext('2d');
+
+
         super.componentDidMount();
         this.defineDimensions();
     }
@@ -61,6 +63,10 @@ export class GaugeComponent extends EPICSComponent{
     drawGauge(){
         //Loop to iterate over the width of the canvas, drawing the appropriate lines
         //on the canvas. Markers every quarter. draws needle last.
+
+        this.context.fillStyle = '#ffffff';
+        this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
         for(var i = 0 ; i < this.canvas.width ; i += this.pipSize){
 
             if(i==this.quarterMark){
@@ -103,6 +109,7 @@ export class GaugeComponent extends EPICSComponent{
 
     //Annotate the marker with the appropriate numeric value.
     annotateMarker(annoLoc){
+        this.context.fillStyle = '#000000'
         this.context.fillText(''+(annoLoc)+'', annoLoc, 140);
     }
 
@@ -121,7 +128,7 @@ export class GaugeComponent extends EPICSComponent{
     render(){
 
         //Returns a canvas for reference by the above drawing functions.
-        return(<canvas  ref="gaugeRef"
+        return(<canvas className='gaugeComp'  ref="gaugeRef"
             width="1000"
             height="150"
             style={canvasStyle}>

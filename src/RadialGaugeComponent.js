@@ -52,7 +52,7 @@ export class RadialGaugeComponent extends EPICSComponent{
                 </defs>
                 <g>
                     <circle cx={200} cy={200} r={150} fill={'none'} stroke={'black'} strokeWidth={6}/>
-                    <polygon points={'200,200 115,360 285,360'} style={{fill:'#dddddd'}}/>
+                    <polygon points={'200,200 115,360 285,360'} style={{fill:'#ffffff'}}/>
                     <circle cx={200} cy={200} r={20} fill={'red'}/>
                 </g>
                 <g id={'pips'}>

@@ -60,7 +60,7 @@ export class LEDComponent extends EPICSComponent{
     drawCircle(colour){
 
         this.context.beginPath();
-        this.context.arc(75,75,60,0,2*Math.PI);
+        this.context.arc(65,65,60,0,2*Math.PI);
         this.context.fillStyle=colour;
         this.context.fill();
 
@@ -70,9 +70,9 @@ export class LEDComponent extends EPICSComponent{
     //Render the canvas
     render(){
 
-        return(<canvas  ref="ledRef"
-            width="150"
-            height="150">
+        return(<canvas ref="ledRef"
+            width="130"
+            height="130">
         </canvas>);
     }
 }
