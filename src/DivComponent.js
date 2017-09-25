@@ -20,7 +20,7 @@ export class DivComponent extends EPICSComponent{
 
         //Returns the EPICS Value specified by the parent class (taken from the props
         //specified in main.js), wrapped in a <div>
-        return(<div> {this.state.EPICSValue} </div>);
+        return(<div className='divComp'> {this.state.EPICSValue} </div>);
     }
 }
 

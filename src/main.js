@@ -7,6 +7,7 @@ import {GaugeComponent} from './GaugeComponent';
 import {LEDComponent} from './LEDComponent';
 import {WriterComponent} from './WriterComponent';
 import {RadialGaugeComponent} from './RadialGaugeComponent';
+import './style.scss';
 
 
 
@@ -15,36 +16,55 @@ import {RadialGaugeComponent} from './RadialGaugeComponent';
 class App extends React.Component{
     render(){
         return(
-            <div>
+            <div id='topwrapper'>
 
-                <div id ='left'>
-                    Signal:
-                    <DivComponent block="SIGNAL" property="signal"/>
-                    <br/>
 
-                    ADC:
-                    <DivComponent block="ADC" property="adc"/>
-                    <br/>
-                </div>
+                <div id='signalADC' className='displayDiv'>
 
-                <div id='right'>
-                    Storage Ring Temperatures:
-                    <br/>
-                    <InputComponent block="TEMPERATURE" property="temp1"/>&deg;C<br/>
-                    <InputComponent block="TEMPERATURE" property="temp2"/>&deg;C<br/>
-                    <InputComponent block="TEMPERATURE" property="temp3"/>&deg;C<br/>
-                    <InputComponent block="TEMPERATURE" property="temp4"/>&deg;C<br/>
+                    <div id='signalADCInner'>
+                        <div id='signal'>
+                            <p id='signalp'>Signal:</p>
+                            <DivComponent block="SIGNAL" property="signal"/>
+                        </div>
+                        <div id='ADC'>
+                            <p id='ADCp'>ADC:</p>
+                            <DivComponent block="ADC" property="adc"/>
+                        </div>
+                    </div>
 
                 </div>
 
-                <br/>
-                <GaugeComponent block="COUNTDOWN" property="countdown"/>
-                <br/>
 
-                <LEDComponent block="TESTLED" property="testled" />
-                <br/>
-                <WriterComponent block="TESTLED" property="testled" />
-                <br/>
+                <div id='temps' className='displayDiv'>
+
+                    <p>SR-Temperatures</p>
+                    <div id='tempsInner'>
+                        <InputComponent block="TEMPERATURE" property="temp1"/>
+                        <InputComponent block="TEMPERATURE" property="temp2"/>
+                        <InputComponent block="TEMPERATURE" property="temp3"/>
+                        <InputComponent block="TEMPERATURE" property="temp4"/>
+                    </div>
+
+                </div>
+
+
+                <div id='gauge'>
+
+                    <br/>
+                    <GaugeComponent block="COUNTDOWN" property="countdown"/>
+                    <br/>
+
+                </div>
+
+
+                <div id='LEDComp'>
+
+                    <LEDComponent block="TESTLED" property="testled" />
+                    <br/>
+                    <WriterComponent block="TESTLED" property="testled" />
+                </div>
+
+                
                 <RadialGaugeComponent block="COUNTDOWN" property="countdown"/>
 
             </div>

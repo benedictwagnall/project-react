@@ -1,0 +1,63 @@
+#topwrapper{
+    width: 100%;
+}
+
+.displayDiv{ 
+    background-color:#c4c4c4;
+    border: solid #8e8e8e 5px;
+    border-radius: 10px;
+}
+
+#signalADC{
+    float:left;
+    height:175px;
+    width:250px;
+    display: inline;
+    text-align: left;
+    position: relative;
+}
+#signalADCInner{
+    padding-left: 10px;
+}
+#signal{
+    position:absolute;
+    top:15%;
+}
+#ADC{
+    position:absolute;
+    bottom:15%;
+}
+#signalp{
+    position:relative;
+    padding:0;
+    margin:0;
+    bottom:0;
+}
+#ADCp{
+    position:relative;
+    padding:0;
+    margin:0;
+    bottom:0;
+}
+
+
+#temps{
+    float: right;
+    width: 175px;
+    height: 175px;
+    position: relative;
+    text-align: center;
+}
+#tempsInner{
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    position:absolute;
+    bottom: 10px;
+}
+
+

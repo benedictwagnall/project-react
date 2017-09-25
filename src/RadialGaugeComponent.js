@@ -8,6 +8,7 @@ export class RadialGaugeComponent extends EPICSComponent{
 
     constructor(props){
         super(props);
+        //Maybe set EPICSVal here to fix initial NaN error
         this.state={gaugeBits: this.drawGauge(), needleBits: this.drawNeedle()};
     }
 
@@ -32,7 +33,6 @@ export class RadialGaugeComponent extends EPICSComponent{
     }
 
     drawNeedle(){
-
         return(
             <g>
                 <polygon
@@ -47,12 +47,12 @@ export class RadialGaugeComponent extends EPICSComponent{
         return (
             <g>
                 <defs>
-                    <line id={'pip'} x1={200} y1={50} x2={200} y2={70} stroke={'black'}strokeWidth={5}></line>
+                    <line id={'pip'} x1={200} y1={50} x2={200} y2={70} stroke={'black'} strokeWidth={5}></line>
                     <line id={'bigPip'} x1={200} y1={50} x2={200} y2={80} stroke={'black'} strokeWidth={10}></line>
                 </defs>
                 <g>
                     <circle cx={200} cy={200} r={150} fill={'none'} stroke={'black'} strokeWidth={6}/>
-                    <polygon points={'200,200 115,360 285,360'} style={{fill:'white'}}/>
+                    <polygon points={'200,200 115,360 285,360'} style={{fill:'#dddddd'}}/>
                     <circle cx={200} cy={200} r={20} fill={'red'}/>
                 </g>
                 <g id={'pips'}>

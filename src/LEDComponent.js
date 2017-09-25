@@ -4,8 +4,6 @@ import React from 'react';
 /*eslint-disable no-unused-vars*/
 import {EPICSComponent} from './EPICSComponent.js';
 
-//Define canvas style
-const canvasStyle ={border: '1px solid #000000',};
 
 //Define constants for colour of LED
 const defaultFill = '#000000';
@@ -74,8 +72,7 @@ export class LEDComponent extends EPICSComponent{
 
         return(<canvas  ref="ledRef"
             width="150"
-            height="150"
-            style={canvasStyle}>
+            height="150">
         </canvas>);
     }
 }
