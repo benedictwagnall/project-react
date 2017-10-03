@@ -3,6 +3,7 @@
 import React from 'react';
 /*eslint-disable no-unused-vars*/
 import {EPICSComponent} from './EPICSComponent.js';
+import {WriterActions} from './WriterActions'
 
 export class WriterComponent extends EPICSComponent{
 
@@ -34,7 +35,9 @@ export class WriterComponent extends EPICSComponent{
         event.preventDefault();
 
         //Call parent method with own state.
-        super.writeToMalc(this.state.inputValue);
+        //super.writeToMalc(this.state.inputValue);
+
+        WriterActions.writerInput(this.state.inputValue);
 
         //Clear the textfield on submit.
         this.refs.textField.value= '';
