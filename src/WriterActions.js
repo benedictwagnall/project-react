@@ -1,6 +1,8 @@
 let actionType = null;
 
-class WriterActions{
+import {ProjectReactDispatcher} from './ProjectReactDispatcher.js'
+
+export class WriterActions{
 
     constructor(){}
 
@@ -10,7 +12,6 @@ class WriterActions{
                 actionType: inputAction,
                 actionData: inputValue
             }
-            
         )
     }
 }

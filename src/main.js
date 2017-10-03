@@ -7,7 +7,7 @@ import {GaugeComponent} from './GaugeComponent';
 import {LEDComponent} from './LEDComponent';
 import {WriterComponent} from './WriterComponent';
 import {RadialGaugeComponent} from './RadialGaugeComponent';
-import './style.scss';
+//import './style.scss';
 
 
 

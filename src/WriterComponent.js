@@ -3,7 +3,7 @@
 import React from 'react';
 /*eslint-disable no-unused-vars*/
 import {EPICSComponent} from './EPICSComponent.js';
-import {WriterActions} from './WriterActions'
+import {WriterActions} from './WriterActions';
 
 export class WriterComponent extends EPICSComponent{
 
@@ -31,13 +31,24 @@ export class WriterComponent extends EPICSComponent{
     //Event handler to send the input to the appropriate place and clear user input
     //field on submit. Calls the EPICSComponent method writeToMalc
     handleSubmit(event){
+
         //PreventDefault stops the entire page reloading on submit (strange default!)
         event.preventDefault();
 
         //Call parent method with own state.
         //super.writeToMalc(this.state.inputValue);
 
+console.log("I am working")
+        /////////////////
+        //WIP:
+        //Call the action creator method to make an action of the input on submission
         WriterActions.writerInput(this.state.inputValue);
+        ///////////////
+
+  
+        this
+
+
 
         //Clear the textfield on submit.
         this.refs.textField.value= '';

@@ -16,22 +16,22 @@ module.exports = {
                 use:["babel-loader"],
             },
 
-            {   test: /\.scss$/,
-                use: [{
-                        loader: "style-loader"
-                        },{
-                        loader: "css-loader"
-                        },{
-                        loader: "sass-loader"
-                     }]
-          }
+          //   {   test: /\.scss$/,
+          //       use: [{
+          //               loader: "style-loader"
+          //               },{
+          //               loader: "css-loader"
+          //               },{
+          //               loader: "sass-loader"
+          //            }]
+          // }
 
         ],
     },
 
     resolve: {
         modules: [path.join(__dirname, 'node_modules'),],
-        alias: {sinon: 'sinon/pkg/sinon.js'},
+        //alias: {sinon: 'sinon/pkg/sinon.js'},
 
     },
 };
