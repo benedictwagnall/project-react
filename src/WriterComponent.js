@@ -34,7 +34,7 @@ export class WriterComponent extends EPICSComponent{
         event.preventDefault();
 
         //Call parent method with own state.
-        super.writeToMalc(this.state.inputValue);
+        //super.writeToMalc(this.state.inputValue);
 
         //Clear the textfield on submit.
         this.refs.textField.value= '';
