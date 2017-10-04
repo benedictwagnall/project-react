@@ -1,11 +1,11 @@
+import {React} from 'React';
+import LEDStore from './LEDStore';
 
+export class LEDControllerView{
 
-class LEDControllerView{
-
-    constructor(){}
-
-    onChange(){
-        
+    _onChange(){
+        this.setState
+        console.log("shabba dabba");
     }
 
 

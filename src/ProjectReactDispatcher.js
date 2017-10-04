@@ -1,13 +1,19 @@
 import {Dispatcher} from 'flux';
 
-class ProjectReactDispatcher extends Dispatcher{
+
+this.dispatcher = new Dispatcher();
+
+export class ProjectReactDispatcher extends Dispatcher{
+
 
     handleInputAction(action){
+
+        console.log(action)
+
         this.dispatch({
             source: 'Input Action',
             action: action
         })
+
     }
-
-
 }

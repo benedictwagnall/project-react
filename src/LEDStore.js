@@ -1,23 +1,29 @@
 import {ProjectReactDispatcher} from './ProjectReactDispatcher.js';
 import {EventEmitter} from  'events';
 
+
 let LEDState = null;
+let changeEvent = 'Ive changed, baby, I promise!';
 
+export class LEDStore extends EventEmitter {
 
-class LEDStore extends EventEmitter {
-
-emitChange(){
-    this.emit(changeEvent);
+constructor(){
+    this.dispatcher = new ProjectReactDispatcher();
+    console.log("LEDSTORE CONSTRUCTOR")
 }
 
-}
+    dispatchToken = this.dispatcher.register((action) => {
+        let action = payload.action;
+        let actionData = action.actionData;
+        this.LEDState = actionData;
 
-
-//Register the store with the Dispatcher
-
-LEDStore.dispatchToken = Dispatcher.register((payload) =>
-{
-    let action = payload.action;
-    let actionData = action.actionData;
+        LEDStore.emitChange();
+        console.log("In registered callback")
+    }
+    
+    emitChange(){
+        this.emit(changeEvent);
+        console.log("grunka lunka dunkity dee");
+    }
 
 }

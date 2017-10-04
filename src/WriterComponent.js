@@ -1,9 +1,10 @@
 //Authors: Benedict Wagnall & Will Rogers, Diamond Light Source
+
 /*eslint-disable no-unused-vars*/
 import React from 'react';
 /*eslint-disable no-unused-vars*/
 import {EPICSComponent} from './EPICSComponent.js';
-import {WriterActions} from './WriterActions';
+import {WriterActions} from './WriterActions.js';
 
 export class WriterComponent extends EPICSComponent{
 
@@ -19,6 +20,8 @@ export class WriterComponent extends EPICSComponent{
         //Bind the event handlers to this object
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+
+        this.WriterActions = new WriterActions();
     }
 
 
@@ -38,15 +41,7 @@ export class WriterComponent extends EPICSComponent{
         //Call parent method with own state.
         //super.writeToMalc(this.state.inputValue);
 
-console.log("I am working")
-        /////////////////
-        //WIP:
-        //Call the action creator method to make an action of the input on submission
-        WriterActions.writerInput(this.state.inputValue);
-        ///////////////
-
-  
-        this
+        this.WriterActions.writerInput(this.state.inputValue);
 
 
 
@@ -54,7 +49,6 @@ console.log("I am working")
         this.refs.textField.value= '';
 
     }
-
 
     //React method: Return the following for application to the DOM
     render(){

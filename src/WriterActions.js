@@ -1,17 +1,23 @@
-let actionType = null;
 
-import {ProjectReactDispatcher} from './ProjectReactDispatcher.js'
+import {ProjectReactDispatcher} from './ProjectReactDispatcher.js';
+
+let actionType = null;
+let inputAction = 'inputAction'
 
 export class WriterActions{
 
-    constructor(){}
+    constructor(){
+        this.dispatcher = new ProjectReactDispatcher()
+    }
 
     writerInput(inputValue){
-        Dispatcher.handleInputAction(
+
+        this.dispatcher.handleInputAction(
             {
                 actionType: inputAction,
                 actionData: inputValue
             }
+
         )
     }
 }

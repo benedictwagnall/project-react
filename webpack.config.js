@@ -13,7 +13,7 @@ module.exports = {
         rules: [
             {   test: /\.js$/,
                 exclude: /node_modules/,
-                use:["babel-loader"],
+                use:['babel-loader',]
             },
 
           //   {   test: /\.scss$/,
@@ -31,7 +31,7 @@ module.exports = {
 
     resolve: {
         modules: [path.join(__dirname, 'node_modules'),],
-        //alias: {sinon: 'sinon/pkg/sinon.js'},
+        alias: {sinon: 'sinon/pkg/sinon.js'},
 
     },
 };
