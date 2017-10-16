@@ -1,28 +1,21 @@
 
-import {ProjectReactDispatcher} from './ProjectReactDispatcher.js';
+import {AppDispatcher} from './ProjectReactDispatcher.js'
 
-// let ProjectReactDispatcher = require('./ProjectReactDispatcher.js');
+
 let actionType = null;
 let inputAction = 'INPUT_ACTION'
 
 export class WriterActions{
 
-    constructor(){
-        this.dispatcher = new ProjectReactDispatcher()
-    }
-
-
     writerInput(inputValue){
 
-        console.log("InputValue in WriterActions");
-        console.log(inputValue);
+        console.log("In WriterActions/writerInput");
 
-        this.dispatcher.handleInputAction(
+        AppDispatcher.handleInputAction(
             {
                 actionType: inputAction,
                 actionData: inputValue
-            }
-
-        )
+            });
+        
     }
 }

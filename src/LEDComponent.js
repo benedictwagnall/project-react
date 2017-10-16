@@ -3,6 +3,7 @@
 import React from 'react';
 /*eslint-disable no-unused-vars*/
 import {EPICSComponent} from './EPICSComponent.js';
+import {LEDControllerView} from './LEDControllerView.js'
 
 
 //Define constants for colour of LED

@@ -7,23 +7,21 @@ let changeEvent = 'I am a change event';
 
 export class LEDStore extends EventEmitter {
 
-constructor(){
-    this.dispatcher = new ProjectReactDispatcher();
-    console.log("LEDSTORE CONSTRUCTOR")
-}
+    constructor(){
+        this.dispatchToken = this.dispatcher.register((payload) => {
+            let action = payload.action;
+            let actionData = action.actionData;
+            this.LEDState = actionData;
 
-    dispatchToken = this.dispatcher.register((payload) => {
-        let action = payload.action;
-        let actionData = action.actionData;
-        this.LEDState = actionData;
-
-        LEDStore.emitChange();
-        console.log("In registered callback")
+            LEDStore.emitChange();
+            console.log("Dispatch received!");
+        });
     }
-    
+
     emitChange(){
         this.emit(changeEvent);
         console.log("emitting a change event");
     }
-
 }
+
+
