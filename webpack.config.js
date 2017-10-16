@@ -12,26 +12,16 @@ module.exports = {
     module: {
         rules: [
             {   test: /\.js$/,
-                exclude: /node_modules/,
+                include: [path.resolve(__dirname, "src")],
+                exclude: [/node_modules/],
                 use:['babel-loader',]
             },
-
-          //   {   test: /\.scss$/,
-          //       use: [{
-          //               loader: "style-loader"
-          //               },{
-          //               loader: "css-loader"
-          //               },{
-          //               loader: "sass-loader"
-          //            }]
-          // }
 
         ],
     },
 
     resolve: {
         modules: [path.join(__dirname, 'node_modules'),],
-        alias: {sinon: 'sinon/pkg/sinon.js'},
-
+        extensions: ['.js', '.jsx',],
     },
 };

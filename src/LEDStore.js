@@ -3,7 +3,7 @@ import {EventEmitter} from  'events';
 
 
 let LEDState = null;
-let changeEvent = 'Ive changed, baby, I promise!';
+let changeEvent = 'I am a change event';
 
 export class LEDStore extends EventEmitter {
 
@@ -12,7 +12,7 @@ constructor(){
     console.log("LEDSTORE CONSTRUCTOR")
 }
 
-    dispatchToken = this.dispatcher.register((action) => {
+    dispatchToken = this.dispatcher.register((payload) => {
         let action = payload.action;
         let actionData = action.actionData;
         this.LEDState = actionData;
@@ -23,7 +23,7 @@ constructor(){
     
     emitChange(){
         this.emit(changeEvent);
-        console.log("grunka lunka dunkity dee");
+        console.log("emitting a change event");
     }
 
 }

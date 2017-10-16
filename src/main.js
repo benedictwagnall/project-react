@@ -7,6 +7,7 @@ import {GaugeComponent} from './GaugeComponent';
 import {LEDComponent} from './LEDComponent';
 import {WriterComponent} from './WriterComponent';
 import {RadialGaugeComponent} from './RadialGaugeComponent';
+import {Dispatcher} from './ProjectReactDispatcher';
 //import './style.scss';
 
 

@@ -1,8 +1,9 @@
 
 import {ProjectReactDispatcher} from './ProjectReactDispatcher.js';
 
+// let ProjectReactDispatcher = require('./ProjectReactDispatcher.js');
 let actionType = null;
-let inputAction = 'inputAction'
+let inputAction = 'INPUT_ACTION'
 
 export class WriterActions{
 
@@ -10,7 +11,11 @@ export class WriterActions{
         this.dispatcher = new ProjectReactDispatcher()
     }
 
+
     writerInput(inputValue){
+
+        console.log("InputValue in WriterActions");
+        console.log(inputValue);
 
         this.dispatcher.handleInputAction(
             {
