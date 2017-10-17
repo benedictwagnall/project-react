@@ -2,9 +2,10 @@
 /*eslint-disable no-unused-vars*/
 import React from 'react';
 /*eslint-disable no-unused-vars*/
-import {EPICSComponent} from './EPICSComponent.js';
-import {LEDControllerView} from './LEDControllerView.js'
-import {LEDStore} from './LEDStore.js'
+//import {LEDContainer} from './LEDContainer.js';
+import {EPICSComponent} from './EPICSComponent.js'
+
+
 
 
 //Define constants for colour of LED
@@ -12,6 +13,7 @@ const defaultFill = '#000000';
 const redFill= '#FF0000';
 const yellowFill = '#FFFF00';
 const greenFill = '#00FF00';
+const blueFill = '#4842f4'
 const errorFill = '#FF00CB';
 
 
@@ -21,11 +23,10 @@ export class LEDComponent extends EPICSComponent{
 
     //Props here are set by the instantation in main.js...
     constructor(props){
-
         //..call the parent constructor with these pps, so that they are
         //accessible in parent object's methods.
         super(props);
-        this.LEDStore = new LEDStore();
+
     }
 
     //Perform the parent componentDidMount stuff as well as this specific functionality.
@@ -42,19 +43,23 @@ export class LEDComponent extends EPICSComponent{
 
     //On update, redraw the circle with the corresponding colour
     componentDidUpdate(){
+        if(this.state.lednumber != null){
+            this.drawCircle(blueFill)
+        }
 
         if(this.state.EPICSValue == 0){
             this.drawCircle(redFill);
 
-        } else if(this.state.EPICSValue ==1){
+        }else if(this.state.EPICSValue ==1){
             this.drawCircle(greenFill);
 
-        } else if (this.state.EPICSValue ==2){
+        }else if(this.state.EPICSValue ==2){
             this.drawCircle(yellowFill);
 
-        } else {
+        }else{
             this.drawCircle(errorFill);
         }
+
     }
 
 
@@ -75,7 +80,7 @@ export class LEDComponent extends EPICSComponent{
         return(<canvas ref="ledRef"
             width="130"
             height="130">
-        </canvas>);
+            </canvas>);
     }
 }
 

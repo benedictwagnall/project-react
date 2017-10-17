@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {DivComponent} from './DivComponent';
 import {InputComponent} from './InputComponent';
 import {GaugeComponent} from './GaugeComponent';
-import {LEDComponent} from './LEDComponent';
+import {LEDContainer} from './LEDContainer.js';
 import {WriterComponent} from './WriterComponent';
 import {RadialGaugeComponent} from './RadialGaugeComponent';
 import {Dispatcher} from './ProjectReactDispatcher';
@@ -15,6 +15,7 @@ import {Dispatcher} from './ProjectReactDispatcher';
 //Wrapper component where we specify what kind of EPICSComponents we want, and set
 //set their props.
 class App extends React.Component{
+
     render(){
         return(
             <div>
@@ -49,7 +50,7 @@ class App extends React.Component{
                     <div id='LEDWriterComp' className='displayDiv'>
                         <div id='LEDInner'>
                             <div id='LEDInner'>
-                                <LEDComponent block="TESTLED" property="testled" />
+                                <LEDContainer block="TESTLED" property="testled" />
                             </div>
                             <div id='writerInner'>
                                 <WriterComponent block="TESTLED" property="testled" />

@@ -9,7 +9,8 @@ export class WriterActions{
 
     writerInput(inputValue){
 
-        console.log("In WriterActions/writerInput");
+        console.log("User input: ");
+        console.log(inputValue);
 
         AppDispatcher.handleInputAction(
             {

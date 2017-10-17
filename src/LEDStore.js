@@ -4,34 +4,41 @@ import {AppDispatcher} from './ProjectReactDispatcher.js'
 
 
 let LEDState = null;
-let changeEvent = 'I am a change event';
+let CHANGE_EVENT = 'I am a change event';
 let dispatchToken = null
 
 export class LEDStore extends EventEmitter {
 
     constructor(){
-
         super();
 
-        console.log("I am an LEDStore and I am alive");
+        console.log("LEDStore created");
 
         this.dispatchToken = AppDispatcher.register((payload) => {
             let action = payload.action;
             let actionData = action.actionData;
-            let LEDState = actionData;
+            this.LEDState = actionData;
 
-            console.log("Callback registered");
+            console.log("Registered callback called");
+            console.log("LEDState updated to: ");
+            console.log(this.LEDState);
             this.emitChange();
         });
     }
 
     emitChange(){
-        this.emit(changeEvent);
-        console.log("emitting a change event");
+        this.emit(CHANGE_EVENT);
+        console.log("change event emitted by store");
     }
 
     getLEDStoreState(){
-        return LEDState;
+        console.log("getLEDStoreState: ")
+        console.log(LEDState)
+        return this.LEDState;
+    }
+
+    addChangeListener(callback){
+        this.on(CHANGE_EVENT, callback)
     }
 }
 
