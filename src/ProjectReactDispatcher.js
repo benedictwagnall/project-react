@@ -9,7 +9,9 @@ class ProjectReactDispatcher extends Dispatcher{
             source: 'INPUT_ACTION',
             action: action
         });
+        console.log("Dispatched:");
         console.log(action);
+
     }
 
 }

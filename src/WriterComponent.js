@@ -6,6 +6,7 @@ import React from 'react';
 import {EPICSComponent} from './EPICSComponent.js';
 import {WriterActions} from './WriterActions.js';
 
+
 export class WriterComponent extends EPICSComponent{
 
     //Props here are set by the instantation in main.js...

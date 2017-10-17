@@ -4,6 +4,7 @@ import React from 'react';
 /*eslint-disable no-unused-vars*/
 import {EPICSComponent} from './EPICSComponent.js';
 import {LEDControllerView} from './LEDControllerView.js'
+import {LEDStore} from './LEDStore.js'
 
 
 //Define constants for colour of LED
@@ -24,7 +25,7 @@ export class LEDComponent extends EPICSComponent{
         //..call the parent constructor with these pps, so that they are
         //accessible in parent object's methods.
         super(props);
-
+        this.LEDStore = new LEDStore();
     }
 
     //Perform the parent componentDidMount stuff as well as this specific functionality.
