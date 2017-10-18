@@ -18,13 +18,9 @@ export class LEDContainer extends EPICSComponent{
 
     _onChange(){
         this.setState( {lednumber: this.LEDStore.getLEDStoreState()} );
-
-        console.log("onChange in LEDContainer called");
     }
 
     render(){
         return(<LEDComponent block="TESTLED" property="testled" lednumber={this.state.lednumber} />)
     }
-
-
 }

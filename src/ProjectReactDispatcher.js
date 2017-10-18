@@ -9,17 +9,8 @@ class ProjectReactDispatcher extends Dispatcher{
             source: 'INPUT_ACTION',
             action: action
         });
-        console.log("Dispatched:");
-        console.log(action);
-
     }
-
 }
-
 
 const AppDispatcher = new ProjectReactDispatcher();
 export {AppDispatcher};
-
-
-// import {Dispatcher} from 'flux';
-// export default new Dispatcher();
