@@ -2,20 +2,16 @@
 /*eslint-disable no-unused-vars*/
 import React from 'react';
 /*eslint-disable no-unused-vars*/
-//import {LEDContainer} from './LEDContainer.js';
 import {EPICSComponent} from './EPICSComponent.js'
-
-
-
 
 //Define constants for colour of LED
 const defaultFill = '#000000';
 const redFill= '#FF0000';
 const yellowFill = '#FFFF00';
 const greenFill = '#00FF00';
-const blueFill = '#4842f4'
 const errorFill = '#FF00CB';
 
+const blueFill = '#4842f4';
 
 
 export class LEDComponent extends EPICSComponent{
@@ -23,7 +19,7 @@ export class LEDComponent extends EPICSComponent{
 
     //Props here are set by the instantation in main.js...
     constructor(props){
-        //..call the parent constructor with these pps, so that they are
+        //..call the parent constructor with these props, so that they are
         //accessible in parent object's methods.
         super(props);
 
@@ -43,9 +39,9 @@ export class LEDComponent extends EPICSComponent{
 
     //On update, redraw the circle with the corresponding colour
     componentDidUpdate(){
-        if(this.state.lednumber != null){
-            this.drawCircle(blueFill)
-        }
+        console.log("lednumber")
+        console.log(this.props.lednumber)
+
 
         if(this.state.EPICSValue == 0){
             this.drawCircle(redFill);
@@ -60,17 +56,24 @@ export class LEDComponent extends EPICSComponent{
             this.drawCircle(errorFill);
         }
 
+        if(this.props.lednumber != null){
+            this.drawNumber(this.props.lednumber)
+        }
     }
 
 
     //Draws the LED with the supplied colour
     drawCircle(colour){
-
         this.context.beginPath();
         this.context.arc(65,65,60,0,2*Math.PI);
         this.context.fillStyle=colour;
         this.context.fill();
+    }
 
+    drawNumber(lednumber){
+        this.context.font = "30px Arial"
+        this.context.fillStyle = "black";
+        this.context.fillText(lednumber, 50, 65)
     }
 
 

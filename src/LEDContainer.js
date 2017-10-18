@@ -1,10 +1,10 @@
 import React from 'react';
-import {LEDStore} from './LEDStore.js';
 import {LEDComponent} from './LEDComponent.js'
+import {EPICSComponent} from './EPICSComponent.js'
+import {LEDStore} from './LEDStore.js';
 
 
-
-export class LEDContainer extends React.Component{
+export class LEDContainer extends EPICSComponent{
 
     constructor(props){
         super(props)
@@ -23,7 +23,7 @@ export class LEDContainer extends React.Component{
     }
 
     render(){
-        return(<LEDComponent lednumber={this.state.lednumber} />)
+        return(<LEDComponent block="TESTLED" property="testled" lednumber={this.state.lednumber} />)
     }
 
 

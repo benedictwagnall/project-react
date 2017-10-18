@@ -1,7 +1,5 @@
-import {ProjectReactDispatcher} from './ProjectReactDispatcher.js';
 import {EventEmitter} from  'events';
 import {AppDispatcher} from './ProjectReactDispatcher.js'
-
 
 let LEDState = null;
 let CHANGE_EVENT = 'I am a change event';
@@ -15,14 +13,12 @@ export class LEDStore extends EventEmitter {
         console.log("LEDStore created");
 
         this.dispatchToken = AppDispatcher.register((payload) => {
-            let action = payload.action;
-            let actionData = action.actionData;
-            this.LEDState = actionData;
-
+            this.LEDState = payload.action.actionData;
+            this.emitChange();
+           
             console.log("Registered callback called");
             console.log("LEDState updated to: ");
             console.log(this.LEDState);
-            this.emitChange();
         });
     }
 
@@ -33,7 +29,8 @@ export class LEDStore extends EventEmitter {
 
     getLEDStoreState(){
         console.log("getLEDStoreState: ")
-        console.log(LEDState)
+        console.log(this.LEDState)
+
         return this.LEDState;
     }
 
