@@ -1,16 +1,14 @@
-import {AppDispatcher} from './ProjectReactDispatcher.js'
+import {AppDispatcher} from './ProjectReactDispatcher.js';
 
-let actionType = null;
-let inputAction = 'INPUT_ACTION'
-
+//Actions for dispatch
 export class WriterActions{
 
+    //Create an action and dispatch it using AppDispatcher.
     writerInput(inputValue){
-
         AppDispatcher.handleInputAction(
             {
-                actionType: inputAction,
+                actionType: null,
                 actionData: inputValue
-            });   
+            });
     }
 }

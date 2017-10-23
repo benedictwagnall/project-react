@@ -36,19 +36,20 @@ export class WriterComponent extends EPICSComponent{
     //field on submit. Calls the EPICSComponent method writeToMalc
     handleSubmit(event){
 
-        //PreventDefault stops the entire page reloading on submit (strange default!)
+            
+        //Not using this while we rework it to be fluxy
+            //Call parent method with own state.
+            //super.writeToMalc(this.state.inputValue);
 
-        //Call parent method with own state.
-        //super.writeToMalc(this.state.inputValue);
-
+        //Call the action creator with the current input. This will allow
+        //us to dispatch it.
         this.WriterActions.writerInput(this.state.inputValue);
 
+        //PreventDefault stops the entire page reloading on submit (strange default!)
         event.preventDefault();
-
 
         //Clear the textfield on submit.
         this.refs.textField.value= '';
-
     }
 
     //React method: Return the following for application to the DOM

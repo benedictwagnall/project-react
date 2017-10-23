@@ -1,9 +1,7 @@
 import {EventEmitter} from  'events';
-import {AppDispatcher} from './ProjectReactDispatcher.js'
+import {AppDispatcher} from './ProjectReactDispatcher.js';
 
-let LEDState = null;
 let CHANGE_EVENT = 'I am a change event';
-let dispatchToken = null
 
 export class LEDStore extends EventEmitter {
 
@@ -15,16 +13,19 @@ export class LEDStore extends EventEmitter {
         });
     }
 
+    //Broadcast to all registered callbacks
     emitChange(){
         this.emit(CHANGE_EVENT);
     }
 
+    //Give us (currently, the only) state in our store
     getLEDStoreState(){
         return this.LEDState;
     }
 
+    //Register a callback.
     addChangeListener(callback){
-        this.on(CHANGE_EVENT, callback)
+        this.on(CHANGE_EVENT, callback);
     }
 }
 

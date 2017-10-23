@@ -1,9 +1,8 @@
 import {Dispatcher} from 'flux';
-//let assign = require('object-assign');
-
 
 class ProjectReactDispatcher extends Dispatcher{
 
+    //Called from action creator - wrap the action and dispatch it 
     handleInputAction(action){
         this.dispatch({
             source: 'INPUT_ACTION',

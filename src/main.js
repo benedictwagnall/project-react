@@ -7,8 +7,6 @@ import {GaugeComponent} from './GaugeComponent';
 import {LEDContainer} from './LEDContainer.js';
 import {WriterComponent} from './WriterComponent';
 import {RadialGaugeComponent} from './RadialGaugeComponent';
-import {Dispatcher} from './ProjectReactDispatcher';
-//import './style.scss';
 
 
 
@@ -57,19 +55,19 @@ class App extends React.Component{
                             </div>
                         </div>
                     </div>
-                    
+
 
                 </div>
 
 
 
-                    <div id='gauge' className='displayDiv'>
-                        <GaugeComponent block="COUNTDOWN" property="countdown"/>
-                    </div>
+                <div id='gauge' className='displayDiv'>
+                    <GaugeComponent block="COUNTDOWN" property="countdown"/>
+                </div>
 
 
-                    
-                    <RadialGaugeComponent block="COUNTDOWN" property="countdown"/>
+
+                <RadialGaugeComponent block="COUNTDOWN" property="countdown"/>
 
             </div>
 

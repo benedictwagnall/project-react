@@ -2,7 +2,7 @@
 /*eslint-disable no-unused-vars*/
 import React from 'react';
 /*eslint-disable no-unused-vars*/
-import {EPICSComponent} from './EPICSComponent.js'
+import {EPICSComponent} from './EPICSComponent.js';
 
 //Define constants for colour of LED
 const defaultFill = '#000000';
@@ -39,25 +39,18 @@ export class LEDComponent extends EPICSComponent{
 
     //On update, redraw the circle with the corresponding colour
     componentDidUpdate(){
-        console.log("lednumber")
-        console.log(this.props.lednumber)
-
-
         if(this.state.EPICSValue == 0){
             this.drawCircle(redFill);
-
         }else if(this.state.EPICSValue ==1){
             this.drawCircle(greenFill);
-
         }else if(this.state.EPICSValue ==2){
             this.drawCircle(yellowFill);
-
         }else{
             this.drawCircle(errorFill);
         }
 
         if(this.props.lednumber != null){
-            this.drawNumber(this.props.lednumber)
+            this.drawNumber(this.props.lednumber);
         }
     }
 
@@ -71,9 +64,9 @@ export class LEDComponent extends EPICSComponent{
     }
 
     drawNumber(lednumber){
-        this.context.font = "30px Arial"
-        this.context.fillStyle = "black";
-        this.context.fillText(lednumber, 50, 65)
+        this.context.font = '30px Arial';
+        this.context.fillStyle = 'black';
+        this.context.fillText(lednumber, 50, 65);
     }
 
 
@@ -83,7 +76,7 @@ export class LEDComponent extends EPICSComponent{
         return(<canvas ref="ledRef"
             width="130"
             height="130">
-            </canvas>);
+        </canvas>);
     }
 }
 

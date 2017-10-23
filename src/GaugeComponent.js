@@ -109,7 +109,7 @@ export class GaugeComponent extends EPICSComponent{
 
     //Annotate the marker with the appropriate numeric value.
     annotateMarker(annoLoc){
-        this.context.fillStyle = '#000000'
+        this.context.fillStyle = '#000000';
         this.context.fillText(''+(annoLoc)+'', annoLoc, 140);
     }
 
